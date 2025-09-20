@@ -2,14 +2,14 @@
 
 ## How do I install these formulae?
 
-`brew install swissarmyhammer/tap/<formula>`
+`brew install swissarmyhammer/homebrew-tap/<formula>`
 
-Or `brew tap swissarmyhammer/tap` and then `brew install <formula>`.
+Or `brew tap swissarmyhammer/homebrew-tap` and then `brew install <formula>`.
 
 Or, in a `brew bundle` `Brewfile`:
 
 ```ruby
-tap "swissarmyhammer/tap"
+tap "swissarmyhammer/homebrew-tap"
 brew "<formula>"
 ```
 
