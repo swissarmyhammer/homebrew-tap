@@ -10,7 +10,7 @@ Or, in a `brew bundle` `Brewfile`:
 
 ```ruby
 brew tap swissarmyhammer/homebrew-tap
-brew swissarmyhammer-cli
+brew install swissarmyhammer-cli
 ```
 
 ## Documentation
