@@ -9,7 +9,7 @@ Or `brew tap swissarmyhammer/homebrew-tap` and then `brew install <formula>`.
 Or, in a `brew bundle` `Brewfile`:
 
 ```ruby
-tap swissarmyhammer/homebrew-tap
+brew tap swissarmyhammer/homebrew-tap
 brew swissarmyhammer-cli
 ```
 
