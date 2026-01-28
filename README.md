@@ -1,18 +1,33 @@
-# Swissarmyhammer Tap
+# SwissArmyHammer Homebrew Tap
 
-## How do I install these formulae?
+Homebrew formulae for SwissArmyHammer tools. Requires macOS on Apple Silicon (ARM64).
 
-`brew install swissarmyhammer/homebrew-tap/<formula>`
+## Formulae
 
-Or `brew tap swissarmyhammer/homebrew-tap` and then `brew install <formula>`.
+| Formula | Description |
+|---------|-------------|
+| `swissarmyhammer-cli` | Command-line interface for SwissArmyHammer prompt management |
+| `avp-cli` | Agent Validator Protocol - Claude Code hook processor CLI |
 
-Or, in a `brew bundle` `Brewfile`:
+## Installation
 
-```ruby
-brew tap swissarmyhammer/homebrew-tap
+```bash
+brew tap swissarmyhammer/tap
 brew install swissarmyhammer-cli
+brew install avp-cli
 ```
 
-## Documentation
+Or install directly:
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+```bash
+brew install swissarmyhammer/tap/swissarmyhammer-cli
+brew install swissarmyhammer/tap/avp-cli
+```
+
+## Brewfile
+
+```ruby
+tap "swissarmyhammer/tap"
+brew "swissarmyhammer-cli"
+brew "avp-cli"
+```
