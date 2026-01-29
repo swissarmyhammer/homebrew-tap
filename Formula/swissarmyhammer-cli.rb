@@ -1,18 +1,43 @@
 class SwissarmyhammerCli < Formula
   desc "Command-line interface for SwissArmyHammer prompt management"
-  homepage "https://github.com/swissarmyhammer/swissarmyhammer"
-  url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/0.4.0/swissarmyhammer-cli-aarch64-apple-darwin.tar.xz"
-  sha256 "d6de745b52dc17eb6d3c2e879e0b264045364e4ac8d706a7588f85fd47d482cf"
+  homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
+  version "0.5.0"
+  if OS.mac? && Hardware::CPU.arm?
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.5.0/swissarmyhammer-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "f8f3fb5c6141a14ea1cf9a0adbff2aa4a9087e8b7e666083a7a021fdf7d72bc0"
+  end
   license any_of: ["MIT", "Apache-2.0"]
 
-  depends_on arch: :arm64
-  depends_on :macos
+  BINARY_ALIASES = {
+    "aarch64-apple-darwin": {},
+  }.freeze
 
-  def install
-    bin.install "sah"
+  def target_triple
+    cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
+    os = OS.mac? ? "apple-darwin" : "unknown-linux-gnu"
+
+    "#{cpu}-#{os}"
   end
 
-  test do
-    assert_match version.to_s, shell_output("#{bin}/sah --version")
+  def install_binary_aliases!
+    BINARY_ALIASES[target_triple.to_sym].each do |source, dests|
+      dests.each do |dest|
+        bin.install_symlink bin/source.to_s => dest
+      end
+    end
+  end
+
+  def install
+    bin.install "sah" if OS.mac? && Hardware::CPU.arm?
+
+    install_binary_aliases!
+
+    # Homebrew will automatically install these, so we don't need to do that
+    doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
+    leftover_contents = Dir["*"] - doc_files
+
+    # Install any leftover files in pkgshare; these are probably config or
+    # sample files.
+    pkgshare.install(*leftover_contents) unless leftover_contents.empty?
   end
 end
