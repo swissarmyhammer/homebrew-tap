@@ -1,10 +1,10 @@
 class SwissarmyhammerCli < Formula
   desc "Command-line interface for SwissArmyHammer prompt management"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.5.0"
+  version "0.6.0"
   if OS.mac? && Hardware::CPU.arm?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.5.0/swissarmyhammer-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "f8f3fb5c6141a14ea1cf9a0adbff2aa4a9087e8b7e666083a7a021fdf7d72bc0"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.6.0/swissarmyhammer-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "cd72a3c2b71950b53e6545460f2580ae19fade00234cb4a9f59e1088b7fae664"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
@@ -28,7 +28,7 @@ class SwissarmyhammerCli < Formula
   end
 
   def install
-    bin.install "sah" if OS.mac? && Hardware::CPU.arm?
+    bin.install "sah", "sah-generate-docs" if OS.mac? && Hardware::CPU.arm?
 
     install_binary_aliases!
 
