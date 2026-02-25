@@ -1,10 +1,10 @@
 class AvpCli < Formula
   desc "Agent Validator Protocol - Claude Code hook processor CLI"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.7.2"
+  version "0.8.0"
   if OS.mac? && Hardware::CPU.arm?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.7.2/avp-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "bf95f32afd24fd5ff5026b51b27845fbd3d4123f87a94b453769cc16978c9dea"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.8.0/avp-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "08b7fa2926a10bf39c646531b73f0df38896b29b0d782c883d0568a369098aba"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
