@@ -1,10 +1,10 @@
 class Mirdan < Formula
-  desc "Mirdan - Universal skill and validator package manager for AI coding agents"
+  desc "Mirdan CLI - Command-line interface for the Mirdan package manager"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.9.1"
+  version "0.9.2"
   if OS.mac? && Hardware::CPU.arm?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.9.1/mirdan-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "34ad3441e3e1bd3ca8954bee4b7ae899018e7f8bd4a76a11caec63cffa82a31c"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.9.2/mirdan-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "e75d3801e1916f2d16b9cac400fafdb730b307524e844c856e1cfbb1334da187"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
