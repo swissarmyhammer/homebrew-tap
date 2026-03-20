@@ -1,10 +1,10 @@
 class MirdanApp < Formula
   desc "Mirdan tray app - Universal package manager for AI coding agents"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer"
-  version "0.9.2"
+  version "0.10.0"
   if OS.mac? && Hardware::CPU.arm?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.9.2/mirdan-app-aarch64-apple-darwin.tar.xz"
-      sha256 "227b72b3e2d256e57607aef1642f8d9a9b82fcf4e9fcc679b47acb1bbfe52829"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.10.0/mirdan-app-aarch64-apple-darwin.tar.xz"
+    sha256 "892f3b2eb9b289098a8be9fa35660a13e8b615e73520761c8a8ce733facd9514"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
