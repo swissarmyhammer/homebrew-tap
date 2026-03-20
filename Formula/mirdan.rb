@@ -1,10 +1,10 @@
 class Mirdan < Formula
   desc "Mirdan CLI - Command-line interface for the Mirdan package manager"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.10.0"
+  version "0.10.1"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.10.0/mirdan-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "2097b971e54366c8e60cd4bb1367b60b1d6737941b19595e3994db3d6d572ad6"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.10.1/mirdan-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "4956dc15f84f0c673b70efd35cc8aeaa2e44813c44194c8fe2cac49e34f80861"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
