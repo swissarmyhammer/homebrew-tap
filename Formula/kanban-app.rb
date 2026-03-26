@@ -1,10 +1,10 @@
 class KanbanApp < Formula
   desc "Tauri desktop app for SwissArmyHammer Kanban board"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer"
-  version "0.10.1"
+  version "0.11.0"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.10.1/kanban-app-aarch64-apple-darwin.tar.xz"
-    sha256 "91b14370dcb763f1f5a03d2c4dbecd32686b2e7560bc5f99d16d711c1bb834d4"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.11.0/kanban-app-aarch64-apple-darwin.tar.xz"
+    sha256 "91c8a9da746cadf839a5c685dcf678d67d20c5dcf9322009f65938d48b499193"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
