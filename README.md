@@ -11,7 +11,7 @@ Homebrew formulae for SwissArmyHammer tools. Requires macOS on Apple Silicon (AR
 | `kanban-app` | Tauri desktop app for SwissArmyHammer Kanban board |
 | `mirdan` | Mirdan CLI - Command-line interface for the Mirdan package manager |
 | `mirdan-app` | Mirdan tray app - Universal package manager for AI coding agents |
-| `shelltool` | Stand along Shell Tool |
+| `shelltool` | Stand alone Shell Tool |
 
 ## Installation
 
