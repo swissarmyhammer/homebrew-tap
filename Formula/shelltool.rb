@@ -1,10 +1,10 @@
 class Shelltool < Formula
   desc "Standalone MCP shell tool CLI for AI coding agents"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.11.0"
+  version "0.11.2"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.11.0/shelltool-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "3b83482d120a0372db2ee00aa3a6a9dca578f2e02cb924f9247c4b4c5e527771"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.11.2/shelltool-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "42c918d77004c0fc9d8724a8523d427a48af5d15798faa972953cca6dacc55d8"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
