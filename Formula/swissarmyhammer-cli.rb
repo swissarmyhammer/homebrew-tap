@@ -1,10 +1,10 @@
 class SwissarmyhammerCli < Formula
   desc "Command-line interface for SwissArmyHammer prompt management"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.11.0"
+  version "0.11.2"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.11.0/swissarmyhammer-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "2b58d9842208d3f0e8e611781b3195c556de7eda7738ae0e60799c37db402beb"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.11.2/swissarmyhammer-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "202848c2c4cc32f0f5333aa589511f3e62cba79d7a38dd83fa51008a8ebb4ee4"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
