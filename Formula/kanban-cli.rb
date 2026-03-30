@@ -1,10 +1,10 @@
 class KanbanCli < Formula
   desc "Standalone CLI for SwissArmyHammer Kanban board"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer"
-  version "0.11.0"
+  version "0.11.2"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.11.0/kanban-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "7b6f091f79effddb70fb2847038691d5a9dfd290bba5c372d2b80c99a558c65f"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.11.2/kanban-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "d76f967b699787fddb99b2dbf9e8b543e72a41827a3a7bb5b57f8a181a36a11e"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
