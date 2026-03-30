@@ -1,15 +1,27 @@
 class Shelltool < Formula
   desc "Standalone MCP shell tool CLI for AI coding agents"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.11.2"
+  version "0.12.8"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.11.2/shelltool-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "42c918d77004c0fc9d8724a8523d427a48af5d15798faa972953cca6dacc55d8"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.12.8/shelltool-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "291a94c9f07ff331709f0105af4121b8f7a78fbb51c491599a1c6dc1d01a4fac"
+  end
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.12.8/shelltool-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "0a8ae858c8aa9e6ef0fe906d05c34ded5556c0ae6360799ea363764f206ed97c"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.12.8/shelltool-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "443236206b25a5d8affa096a1cdb5e30ed85d5e1553fc212d62807f38181a010"
+    end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-unknown-linux-gnu":  {},
   }.freeze
 
   def target_triple
@@ -29,6 +41,8 @@ class Shelltool < Formula
 
   def install
     bin.install "shelltool" if OS.mac? && Hardware::CPU.arm?
+    bin.install "shelltool" if OS.linux? && Hardware::CPU.arm?
+    bin.install "shelltool" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
