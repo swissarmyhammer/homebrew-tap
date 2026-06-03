@@ -1,15 +1,27 @@
 class AvpCli < Formula
   desc "Agent Validator Protocol - Claude Code hook processor CLI"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.11.2"
+  version "0.13.8"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.11.2/avp-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "9fe378c3fa896272ec9bf5c0e844e0e8bada8fc9a3bcd426c4ff8d566e42bbfc"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.8/avp-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "2a5344736f3cd7b68fa4f6a79f65ae9a38f646bf98e23699df4fbe95c4ba995f"
+  end
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.8/avp-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "dd4d064628d215bd9d63fc1f733b2f65a8feeb45d266cc3f1c688d61e5f3a640"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.8/avp-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "7e01bd56d8942fb34494465185848a57de0f2a0070ad72b5948c6e84436d5b7d"
+    end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-unknown-linux-gnu":  {},
   }.freeze
 
   def target_triple
@@ -29,6 +41,8 @@ class AvpCli < Formula
 
   def install
     bin.install "avp" if OS.mac? && Hardware::CPU.arm?
+    bin.install "avp" if OS.linux? && Hardware::CPU.arm?
+    bin.install "avp" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
