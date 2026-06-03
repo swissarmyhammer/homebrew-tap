@@ -1,15 +1,27 @@
 class SwissarmyhammerCli < Formula
   desc "Command-line interface for SwissArmyHammer prompt management"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.11.2"
+  version "0.13.8"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.11.2/swissarmyhammer-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "202848c2c4cc32f0f5333aa589511f3e62cba79d7a38dd83fa51008a8ebb4ee4"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.8/swissarmyhammer-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "a0255bf6e48bc21dfb24357f85e9bc77a9172459587bd5def1acb88975e26581"
+  end
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.8/swissarmyhammer-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "2a730316943d9747270945e7907656d87d0ed70e402c2530f6c8141a5e548b0a"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.8/swissarmyhammer-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "c5288c53994874a1ff921e1d258a3a95cfc9da719440e370d25d12e85b71a722"
+    end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-unknown-linux-gnu":  {},
   }.freeze
 
   def target_triple
@@ -28,7 +40,9 @@ class SwissarmyhammerCli < Formula
   end
 
   def install
-    bin.install "sah", "sah-generate-docs" if OS.mac? && Hardware::CPU.arm?
+    bin.install "sah" if OS.mac? && Hardware::CPU.arm?
+    bin.install "sah" if OS.linux? && Hardware::CPU.arm?
+    bin.install "sah" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
