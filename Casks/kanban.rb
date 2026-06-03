@@ -1,11 +1,14 @@
 cask "kanban" do
-  version "0.11.2"
-  sha256 "0c05251cfb25ffd9a29cf085f7ffd9f3670e7b3b3e1c4f669ab9b2be07e6192d"
+  version "0.13.8"
+  sha256 "218783466bc22a0fb6348c794c759b295046df04c9088f27ce87fc6a1444b8b2"
 
-  url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.11.2/Kanban_aarch64.dmg"
+  url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.8/Kanban_aarch64.dmg"
   name "Kanban"
   desc "Kanban board for SwissArmyHammer"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer"
 
   app "Kanban.app"
+
+  binary "#{appdir}/Kanban.app/Contents/MacOS/kanban"
+  conflicts_with formula: "kanban"
 end
