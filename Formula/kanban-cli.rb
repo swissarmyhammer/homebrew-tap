@@ -1,15 +1,27 @@
 class KanbanCli < Formula
-  desc "Standalone CLI for SwissArmyHammer Kanban board"
-  homepage "https://github.com/swissarmyhammer/swissarmyhammer"
-  version "0.11.2"
+  desc "kanban — a git-native task board for humans and AI coding agents; CLI + MCP server over versionable .kanban/ files"
+  homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
+  version "0.13.8"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.11.2/kanban-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "d76f967b699787fddb99b2dbf9e8b543e72a41827a3a7bb5b57f8a181a36a11e"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.8/kanban-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "dfce40eacbb59979ec3e0d5f0bf131168bec2530bde782015dcbd466ea4eaf41"
+  end
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.8/kanban-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "d0e0e3c648da90cd517e6b3adf849897914371e5cbeb82a58d7a958a9a477c9b"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.8/kanban-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "c71fb4abb75bd61d7fe8cc8dff6585940b23ae4e0ed17a98b72f586554ff0bf9"
+    end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-unknown-linux-gnu":  {},
   }.freeze
 
   def target_triple
@@ -29,6 +41,8 @@ class KanbanCli < Formula
 
   def install
     bin.install "kanban" if OS.mac? && Hardware::CPU.arm?
+    bin.install "kanban" if OS.linux? && Hardware::CPU.arm?
+    bin.install "kanban" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
