@@ -1,6 +1,6 @@
 cask "kanban" do
   version "0.13.8"
-  sha256 "218783466bc22a0fb6348c794c759b295046df04c9088f27ce87fc6a1444b8b2"
+  sha256 "42ce2dcb0d7eec01c68133ebe0387df618bd67d52ff6080fc7ea89e066487b03"
 
   url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.8/Kanban_aarch64.dmg"
   name "Kanban"
