@@ -1,19 +1,19 @@
 class AvpCli < Formula
   desc "Agent Validator Protocol - Claude Code hook processor CLI"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.13.8"
+  version "0.13.10"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.8/avp-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "2a5344736f3cd7b68fa4f6a79f65ae9a38f646bf98e23699df4fbe95c4ba995f"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.10/avp-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "87f95518445f6b7ced0709b552cf9274c1949c95682d6f7d0828a9f03718d48e"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.8/avp-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "dd4d064628d215bd9d63fc1f733b2f65a8feeb45d266cc3f1c688d61e5f3a640"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.10/avp-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "3f5dfda03e18219378a0280eeb847d319e20ceb08625fb75433904f34d354472"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.8/avp-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "7e01bd56d8942fb34494465185848a57de0f2a0070ad72b5948c6e84436d5b7d"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.13.10/avp-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "830f272d5f97862b3f0d860cc945f372480c9f290b05233257f3da5f0d987e3d"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
