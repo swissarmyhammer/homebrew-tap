@@ -1,19 +1,19 @@
 class ShelltoolCli < Formula
   desc "Standalone MCP shell tool CLI for AI coding agents"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.15.0"
+  version "0.15.1"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.15.0/shelltool-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "5a2affc0530ddb1560169305a7d569d0fe9a674766b098ab4dd9a08652de872b"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.15.1/shelltool-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "21382c01e819ec5a1f5b83dd2c4fcba82a2579b4d29c495104c68c1708abe1ea"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.15.0/shelltool-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "b6d58656dbe639e989b22d1f194c4eb396ca98e9aba11f24f47651f472e0e0a1"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.15.1/shelltool-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "23517b12dd2c9cc6988bee47ca5feac80bc1c540d337a654203dcdd1c73bb19f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.15.0/shelltool-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "e32f0c07807f31ab7af3d3742754c1a75eff751f7004d35cc6d57f247a2ba749"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.15.1/shelltool-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "d14f8098ee0b180b7a255160699e4070d3dab86e87c23ba36d77842716719e9d"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
