@@ -1,19 +1,19 @@
 class CodeContextCli < Formula
   desc "Standalone MCP code-context tool CLI for AI coding agents"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.16.0"
+  version "0.17.0"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.16.0/code-context-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "1e880c2c0369507c3e9d22723e4785e28dcc2e04675eae93f17d63b9703cf2ed"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/code-context-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "4138fa5d5d45b7656a066824142a0c55a009be6548d3f43ed7a1abdeac47388d"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.16.0/code-context-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "b25a20a5a7a348c49b953d99871252c94ab1ed42526663ff6e0b6cce4716c95d"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/code-context-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "98e94f7ae0a74cf718263bf46fa6b64f6f08c3008220465b594276bd3d16765e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.16.0/code-context-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "17cab4231f7ddbb7e9ca0586ce42f60992ba43e226133210d8611f17003efb00"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/code-context-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "1736c6aab9b196dd7b5364a8e3f887bd0c5f7241b811aae47d6b3e5ef415ea2f"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
