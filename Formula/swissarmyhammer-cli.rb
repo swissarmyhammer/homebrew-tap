@@ -1,19 +1,19 @@
 class SwissarmyhammerCli < Formula
   desc "Command-line interface for SwissArmyHammer prompt management"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.18.0"
+  version "0.18.1"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/swissarmyhammer-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "5aa0149e20f64813b4bc6ea3b7f122065ada0f63b3756ff2055ca536b3ae8ac7"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.1/swissarmyhammer-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "f79ce79e850e1c0ea0390b3e75e75cbd523e392a6a9295a2dca3bf06ad667ae0"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/swissarmyhammer-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "6b258a46a14402b1cc0f70c955cf690baeab8453ad9ea73c917bafa423df48ec"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.1/swissarmyhammer-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "26a2ae2bd589b65a02459d2e2a7dd675e7b12b5a30fd4b1538c027085a3f8a9b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/swissarmyhammer-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "f49a0574b45d82872b71360f049fc9f21ea3333b075b2086b09301cea3d797eb"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.1/swissarmyhammer-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "818055e7516ca25bd4e7e5be3feb25fe400082ec0fec392d1ecfcc80d10de52e"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
