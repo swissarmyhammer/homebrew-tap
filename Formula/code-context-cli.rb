@@ -1,19 +1,19 @@
 class CodeContextCli < Formula
   desc "Standalone MCP code-context tool CLI for AI coding agents"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.17.0"
+  version "0.18.0"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/code-context-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "4138fa5d5d45b7656a066824142a0c55a009be6548d3f43ed7a1abdeac47388d"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/code-context-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "e640d21ada97163b6b96a33d64668105250da4ba718ef44ddad971632e1e661c"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/code-context-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "98e94f7ae0a74cf718263bf46fa6b64f6f08c3008220465b594276bd3d16765e"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/code-context-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "2b5ae19e0228193be0c29f8930f84c65bf26c885fada09c4a25e9fda5696588d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/code-context-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "1736c6aab9b196dd7b5364a8e3f887bd0c5f7241b811aae47d6b3e5ef415ea2f"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/code-context-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "f8792487370af8a5c93bc0901a48b4adbe9e43e13cdd40405d774c8155fe17f7"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -40,9 +40,15 @@ class CodeContextCli < Formula
   end
 
   def install
-    bin.install "code-context" if OS.mac? && Hardware::CPU.arm?
-    bin.install "code-context" if OS.linux? && Hardware::CPU.arm?
-    bin.install "code-context" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "code-context"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "code-context"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "code-context"
+    end
 
     install_binary_aliases!
 
