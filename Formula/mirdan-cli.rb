@@ -1,19 +1,19 @@
 class MirdanCli < Formula
   desc "Mirdan CLI - Command-line interface for the Mirdan package manager"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.17.0"
+  version "0.18.0"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/mirdan-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "8ce34841ac4731c3fb15fd8d7264e520e378e4e0049590810c4fbb5e969cdf22"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/mirdan-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "c07b6a80c57953379a8c0dbd6f363ed7049a997e88b9354acd80bde718bfb056"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/mirdan-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "8cba5ab6816f4d69f2e194fff5c490d9c83ff5db0a79f360c9e4ba9da38e242d"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/mirdan-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "07759aefe480731a296269dd3931ef811147b31c0b355c45f3384393b3e7bb72"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/mirdan-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "0a85b3e70382afd05820bc79040b05d5399b7e452306d2c82a171655b304add8"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/mirdan-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "e01e0adef80b3c35a5a225593e7d38b993bff97d696a4cd38c199b73e03ad82c"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -40,9 +40,15 @@ class MirdanCli < Formula
   end
 
   def install
-    bin.install "mirdan" if OS.mac? && Hardware::CPU.arm?
-    bin.install "mirdan" if OS.linux? && Hardware::CPU.arm?
-    bin.install "mirdan" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "mirdan"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "mirdan"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "mirdan"
+    end
 
     install_binary_aliases!
 
