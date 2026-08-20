@@ -1,19 +1,19 @@
 class MirdanCli < Formula
   desc "Mirdan CLI - Command-line interface for the Mirdan package manager"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.18.0"
+  version "0.18.1"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/mirdan-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "c07b6a80c57953379a8c0dbd6f363ed7049a997e88b9354acd80bde718bfb056"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.1/mirdan-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "f1a3cbc995ecaa88d469d099f8e9c2bc73379cf73ae3f43b67b4f7496c5f47e8"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/mirdan-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "07759aefe480731a296269dd3931ef811147b31c0b355c45f3384393b3e7bb72"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.1/mirdan-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e535043273470da63d361c1655186629bf4b59efaa43d29530b65a6900cf9a51"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/mirdan-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "e01e0adef80b3c35a5a225593e7d38b993bff97d696a4cd38c199b73e03ad82c"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.1/mirdan-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "957d451c83ef11bb2555b8e86a1897b11a0289c7fe8a920f794acecb98caafcf"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
