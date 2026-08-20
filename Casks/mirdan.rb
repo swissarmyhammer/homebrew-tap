@@ -1,8 +1,8 @@
 cask "mirdan" do
-  version "0.17.0"
-  sha256 "69efd0fbf962f4c41f0a6af04db36f283adeed98b1e33cacd4d92fe5bb58f7df"
+  version "0.18.1"
+  sha256 "f7221b24f6e696b9fdb2583739b709233ef6fd7e084212d078080987691cc600"
 
-  url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/Mirdan_aarch64.dmg"
+  url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.1/Mirdan_aarch64.dmg"
   name "Mirdan"
   desc "Universal package manager for AI coding agents"
   homepage "https://mirdan.ai"
