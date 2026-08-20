@@ -1,8 +1,8 @@
 cask "kanban" do
-  version "0.17.0"
-  sha256 "ddfb274eaf26c8a3728e4bc7f0402d20dd81ebff4bd86dddf1b7b7a2219d25af"
+  version "0.18.1"
+  sha256 "dc90fb22fa41c45e02c13f9d672b640b350b138c3951197f729cda5b2d6d81fd"
 
-  url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/Kanban_aarch64.dmg"
+  url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.1/Kanban_aarch64.dmg"
   name "Kanban"
   desc "Kanban board for SwissArmyHammer"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer"
