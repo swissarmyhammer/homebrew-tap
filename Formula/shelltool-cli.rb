@@ -1,19 +1,19 @@
 class ShelltoolCli < Formula
   desc "Standalone MCP shell tool CLI for AI coding agents"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.17.0"
+  version "0.18.0"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/shelltool-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "2b3faa204b0556a2f16a2d11a5b25d90b297e7d70703bcad687b5dfb3c2a0f33"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/shelltool-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "5594301afbb900cfa88cd66380d4e951b10c1b5e325055db9edcf8a62b391103"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/shelltool-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "4078268b631bf94bfa4bbdfb15f57ae0cd19b67b3f90c04d8f6a44358149888e"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/shelltool-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "f8acffe6f34a8f61269f2c3324224aeb180687268eb49f79f6e11f073161cec1"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/shelltool-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "029ec4b7613b9206cec4b7f1ff75d5ab165606fbed1166a5fe1af421aaa1ab8d"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/shelltool-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "52b41ea0a49449b27763f53794babbefa2a736d522921ea74514f98557e0e8a4"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -40,9 +40,15 @@ class ShelltoolCli < Formula
   end
 
   def install
-    bin.install "shelltool" if OS.mac? && Hardware::CPU.arm?
-    bin.install "shelltool" if OS.linux? && Hardware::CPU.arm?
-    bin.install "shelltool" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "shelltool"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "shelltool"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "shelltool"
+    end
 
     install_binary_aliases!
 
