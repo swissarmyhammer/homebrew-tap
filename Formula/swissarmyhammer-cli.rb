@@ -1,19 +1,19 @@
 class SwissarmyhammerCli < Formula
   desc "Command-line interface for SwissArmyHammer prompt management"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.17.0"
+  version "0.18.0"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/swissarmyhammer-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "cc3f7e06549cb10273edf740a600f2a6a53434a9d667b3483c145a68dfe52f70"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/swissarmyhammer-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "5aa0149e20f64813b4bc6ea3b7f122065ada0f63b3756ff2055ca536b3ae8ac7"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/swissarmyhammer-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "bde1959a139c67846b434f7d4c1cde4ead0b2343dc96638de2f5d9b562b648fa"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/swissarmyhammer-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "6b258a46a14402b1cc0f70c955cf690baeab8453ad9ea73c917bafa423df48ec"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.17.0/swissarmyhammer-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "d45be89e1866dd95ad1629582e92abbb3f27c89c41a5f2696a2e181b4d1665ce"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.18.0/swissarmyhammer-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "f49a0574b45d82872b71360f049fc9f21ea3333b075b2086b09301cea3d797eb"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -40,9 +40,15 @@ class SwissarmyhammerCli < Formula
   end
 
   def install
-    bin.install "sah" if OS.mac? && Hardware::CPU.arm?
-    bin.install "sah" if OS.linux? && Hardware::CPU.arm?
-    bin.install "sah" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "sah"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "sah"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "sah"
+    end
 
     install_binary_aliases!
 
