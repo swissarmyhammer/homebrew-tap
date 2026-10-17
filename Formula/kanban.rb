@@ -1,19 +1,19 @@
 class Kanban < Formula
   desc "kanban — a git-native task board for humans and AI coding agents; CLI + MCP server over versionable .kanban/ files"
   homepage "https://github.com/swissarmyhammer/swissarmyhammer/blob/main/README.md"
-  version "0.20.1"
+  version "0.20.2"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.20.1/kanban-cli-aarch64-apple-darwin.tar.xz"
-    sha256 "416789c31478481867bccd9db69c1a0e68e2b1dc2d392f3ac436e07f49522126"
+    url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.20.2/kanban-cli-aarch64-apple-darwin.tar.xz"
+    sha256 "128fd4d28a6da95024d63a8e325dc0e3f5303ab759a764b2e00476e967f5d99b"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.20.1/kanban-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "dacf2cc8224022cbc9f3a81fab009f88f93197a7758e73b24124523323b53707"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.20.2/kanban-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "bef92d952e5f0e5732ab09f1791f81a1b2c47c016020f5175a844296fd669c48"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.20.1/kanban-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "313ea87e7635ccb6afee61182e8466e18eb87cde07a7814735b66c5e48a6e40d"
+      url "https://github.com/swissarmyhammer/swissarmyhammer/releases/download/v0.20.2/kanban-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "43c1f1f472eea88485d3766f20761b0c7551b13f405c72995d6dc1d651885d98"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
