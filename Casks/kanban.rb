@@ -10,5 +10,5 @@ cask "kanban" do
   app "Kanban.app"
 
   binary "#{appdir}/Kanban.app/Contents/MacOS/kanban"
-  conflicts_with formula: "kanban-cli"
+  conflicts_with formula: "kanban"
 end
