@@ -15,7 +15,7 @@ permissions:
 jobs:
   style:
     name: Style and README
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
 
@@ -71,7 +71,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-14, ubuntu-latest]
+        os: [macos-15, ubuntu-latest]
         formula: ${{ fromJSON(needs.style.outputs.formulae) }}
     steps:
       - uses: actions/checkout@v4
@@ -80,7 +80,9 @@ jobs:
         if: runner.os == 'Linux'
         uses: Homebrew/actions/setup-homebrew@main
 
+      # setup-homebrew on Linux already taps this repository.
       - name: Tap this repository
+        if: runner.os == 'macOS'
         run: brew tap swissarmyhammer/tap "$GITHUB_WORKSPACE"
 
       - name: Install
