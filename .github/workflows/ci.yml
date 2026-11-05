@@ -78,7 +78,7 @@ jobs:
 
       - name: Set up Homebrew
         if: runner.os == 'Linux'
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@main
 
       - name: Tap this repository
         run: brew tap swissarmyhammer/tap "$GITHUB_WORKSPACE"
